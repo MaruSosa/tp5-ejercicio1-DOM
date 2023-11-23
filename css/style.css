@@ -38,11 +38,18 @@ body {
   input{
     font-size: 20px;
     border-radius: 10px;
-    background-color: rgb(45, 251, 38);
+    background-color: rgb(87, 243, 170);
   } 
   .ingresoNumero p{
-    font-size: 20px;
+    font-size: 25px;
+    color: rgb(9, 2, 83);
+    font-family: 'Concert One', sans-serif;
   } 
+  .ingresoNumero button{
+    background-color: rgb(239, 193, 41);
+    margin: 10px;
+    padding: 5px;
+  }
 footer{
     color: rgb(9, 2, 83);
     font-family: 'Concert One', sans-serif;
@@ -70,5 +77,13 @@ footer{
         font-family: 'Concert One', sans-serif;
         font-size: 20px;
         padding: 10px;
+    }
+    #startButton{
+        font-size: 10px;
+    }
+    input{
+        font-size: 28px;
+    }
+    .ingresoNumero{
     }
   }
