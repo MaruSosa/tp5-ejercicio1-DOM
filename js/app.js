@@ -6,6 +6,7 @@ const comenzarJuego = () => {
     const inputNumero = document.createElement("input");
     inputNumero.setAttribute("type", "number");
     inputNumero.setAttribute("placeholder", "Ingresa un número");
+    inputNumero.required=true;
     const submitButton = document.createElement("button");
     submitButton.innerHTML = "Enviar";
     const contenedor = document.querySelector(".ingresoNumero");
@@ -21,22 +22,29 @@ const comenzarJuego = () => {
   const inputNumeroNuevo = document.getElementById("idInput");
   bienvenida.style.display = "none";
   startButton.style.display = "none";
-  inputNumero.style.display = "block";
+  inputNumeroNuevo.style.display = "block";
 };
 document.getElementById("startButton").addEventListener("click", comenzarJuego);
 const crearNumeroAleatorio = () => {
   const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+  console.log(numeroAleatorio);
   return numeroAleatorio;
 };
 
 const comparacionNumeros = () => {
   const numeroIngresado = parseInt(document.querySelector('input[type="number"]').value);
-  if (numeroAleatorio === numeroIngresado) {
-    alert("¡Felicidades! Has adivinado el número.");
-  } else {
-    alert("Intenta de nuevo. El número no coincide.");
+  if(!numeroIngresado==""){
+    if (numeroAleatorio === numeroIngresado) {
+        alert("¡Felicidades! Has adivinado el número.");
+      } else if(numeroAleatorio>numeroIngresado) {
+        alert("El número ingresado es menor que el número mágico");
+      }else{
+        alert("El número ingresado es mayor que el número mágico");
+      }
+      document.querySelector('input[type="number"]').value='';
+  }else{
+    alert('El campo esta vacio..ingrese un número');
   }
-  document.querySelector('input[type="number"]').value='';
 };
 
 
